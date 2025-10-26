@@ -16,9 +16,9 @@ public class ViewCustomers extends JFrame implements ActionListener {
         setLocationRelativeTo(null);
         setLayout(new BorderLayout());
 
-        System.out.println("🔍 Opening ViewCustomers...");
+        System.out.println("Opening ViewCustomers...");
         List<Customer> list = CustomerData.getAllCustomers();
-        System.out.println("📊 Found " + list.size() + " customers to display.");
+        System.out.println("Found " + list.size() + " customers to display.");
 
         String[] columns = {"ID", "Name", "DOB", "Gender", "Email", "Contact", "Address", "City", "Pin", "State"};
         DefaultTableModel model = new DefaultTableModel(columns, 0);

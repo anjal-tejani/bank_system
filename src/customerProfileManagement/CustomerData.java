@@ -5,20 +5,19 @@ import java.util.*;
 
 public class CustomerData {
 
-    // ✅ Save CSV file in project root folder (not inside src)
     private static final String FILE_PATH = System.getProperty("user.dir") + File.separator + "customers.csv";
 
-    // ✅ ADD new customer
+    // ADD new customer
     public static void addCustomer(Customer customer) {
         try (FileWriter fw = new FileWriter(FILE_PATH, true)) {
             fw.write(customer.toString() + "\n");
-            System.out.println("✅ Added customer to: " + new File(FILE_PATH).getAbsolutePath());
+            System.out.println("Added customer to: " + new File(FILE_PATH).getAbsolutePath());
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    // ✅ GET all customers
+    // GET all customers
     public static ArrayList<Customer> getAllCustomers() {
         ArrayList<Customer> list = new ArrayList<>();
         File file = new File(FILE_PATH);
@@ -38,7 +37,7 @@ public class CustomerData {
                     ));
                 }
             }
-            System.out.println("📄 Customers loaded: " + list.size());
+            System.out.println("Customers loaded: " + list.size());
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -46,7 +45,7 @@ public class CustomerData {
         return list;
     }
 
-    // ✅ SEARCH by ID
+    // SEARCH by ID
     public static Customer getCustomerById(String id) {
         for (Customer c : getAllCustomers()) {
             if (c.getId().equals(id)) {
@@ -56,7 +55,7 @@ public class CustomerData {
         return null;
     }
 
-    // ✅ DELETE by ID
+    // DELETE by ID
     public static boolean deleteCustomer(String id) {
         ArrayList<Customer> list = getAllCustomers();
         boolean found = list.removeIf(c -> c.getId().equals(id));
@@ -65,7 +64,7 @@ public class CustomerData {
         return found;
     }
 
-    // ✅ UPDATE existing customer
+    // UPDATE existing customer
     public static boolean updateCustomer(Customer updatedCustomer) {
         ArrayList<Customer> list = getAllCustomers();
         boolean found = false;
@@ -82,13 +81,13 @@ public class CustomerData {
         return found;
     }
 
-    // ✅ Helper: Save all to file
+    // Helper: Save all to file
     private static void saveAllCustomers(ArrayList<Customer> list) {
         try (FileWriter fw = new FileWriter(FILE_PATH)) {
             for (Customer c : list) {
                 fw.write(c.toString() + "\n");
             }
-            System.out.println("💾 Saved all customers to file.");
+            System.out.println("Saved all customers to file.");
         } catch (Exception e) {
             e.printStackTrace();
         }
