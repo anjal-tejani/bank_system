@@ -139,7 +139,7 @@ public class UpdateCustomer extends JFrame implements ActionListener {
                 return;
             }
 
-            Customer c = CustomerData.getCustomerById(id);
+            CustomerClass c = CustomerData.getCustomerById(id);
             if (c == null) {
                 JOptionPane.showMessageDialog(null, "Customer not found!");
                 return;
@@ -183,7 +183,7 @@ public class UpdateCustomer extends JFrame implements ActionListener {
                 return;
             }
 
-            Customer updated = new Customer(id, name, dob, gender, email, contact, addr, city, pin, state);
+            CustomerClass updated = new CustomerClass(id, name, dob, gender, email, contact, addr, city, pin, state);
             boolean success = CustomerData.updateCustomer(updated);
 
             if (success)

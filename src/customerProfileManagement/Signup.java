@@ -158,7 +158,7 @@ public class Signup extends JFrame implements ActionListener {
             String pin = pinCodeT.getText();
             String state = stateT.getText();
 
-            CustomerData.addCustomer(new Customer(id, name, dob, gender, email, contact, addr, city, pin, state));
+            CustomerData.addCustomer(new CustomerClass(id, name, dob, gender, email, contact, addr, city, pin, state));
             JOptionPane.showMessageDialog(null, "Customer Added Successfully!");
             setVisible(false);
             new CustomerProfileMenu();

@@ -17,13 +17,13 @@ public class ViewCustomers extends JFrame implements ActionListener {
         setLayout(new BorderLayout());
 
         System.out.println("Opening ViewCustomers...");
-        List<Customer> list = CustomerData.getAllCustomers();
+        List<CustomerClass> list = CustomerData.getAllCustomers();
         System.out.println("Found " + list.size() + " customers to display.");
 
         String[] columns = {"ID", "Name", "DOB", "Gender", "Email", "Contact", "Address", "City", "Pin", "State"};
         DefaultTableModel model = new DefaultTableModel(columns, 0);
 
-        for (Customer c : list) {
+        for (CustomerClass c : list) {
             model.addRow(new Object[]{
                 c.getId(), c.getName(), c.getDob(), c.getGender(), c.getEmail(),
                 c.getContactNo(), c.getAddress(), c.getCity(), c.getPinCode(), c.getState()

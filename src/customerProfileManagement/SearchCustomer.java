@@ -55,11 +55,11 @@ public class SearchCustomer extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent ae) {
         if (ae.getSource() == searchBtn) {
             String query = searchT.getText().toLowerCase();
-            ArrayList<Customer> list = CustomerData.getAllCustomers();
+            ArrayList<CustomerClass> list = CustomerData.getAllCustomers();
             boolean found = false;
             resultArea.setText("");
 
-            for (Customer c : list) {
+            for (CustomerClass c : list) {
                 if (c.getId().toLowerCase().equals(query) || c.getName().toLowerCase().contains(query)) {
                     resultArea.append(
                         "ID: " + c.getId() + "\n" +

@@ -1,6 +1,6 @@
 package customerProfileManagement;
 
-public class Customer {
+public class CustomerClass {
     private String id;
     private String name;
     private String dob;
@@ -12,7 +12,7 @@ public class Customer {
     private String pinCode;
     private String state;
 
-    public Customer(String id, String name, String dob, String gender, String email,
+    public CustomerClass(String id, String name, String dob, String gender, String email,
                     String contactNo, String address, String city, String pinCode, String state) {
         this.id = id;
         this.name = name;
